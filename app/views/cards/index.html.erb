@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 style="text-align: center;">Cards</h1>
+<%= link_to "New card", new_card_path, class: "btn btn-warning" %>
+
+<div id="cards" >
+  <% @cards.each do |card| %>
+    <div class="card">
+    <%= render card %>
+    <p>
+    <div class="btn-group">
+    <%= link_to "Show this card", card, class: "btn btn-primary" %> 
+    <%= link_to "Learn this card", learn_card_path(card), class: "btn btn-success" %>
+    </div>
+    </p>
+    </div>
+  <% end %>
+</div>
+
