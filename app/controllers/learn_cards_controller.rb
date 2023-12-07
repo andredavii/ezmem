@@ -6,8 +6,9 @@ class LearnCardsController < ApplicationController
   end
 
   def update
-    # Check text submitted from form on show page. If matching, show success message. 
-    # If not, render show page again with error (maybe flash)
+    # Check text submitted from form on show page.
+    # If matching, render success view. 
+    # If not, render try again view.
   end
 
   private
