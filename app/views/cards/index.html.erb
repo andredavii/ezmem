@@ -1,8 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
-<h1 style="text-align: center;">Cards</h1>
-<%= link_to "New card", new_card_path, class: "btn btn-warning" %>
-
+<h1 style="text-align: center; margin-right: 460px;">Cards</h1>
+<div style= "margin-left: 833px;">
+<%= link_to "New card", new_card_path, class: "btn btn-primary" %>
+</div>
 <div id="cards" >
   <% @cards.each do |card| %>
     <div class="card">

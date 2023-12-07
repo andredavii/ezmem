@@ -6,6 +6,10 @@ class LearnCardsController < ApplicationController
   end
 
   def update
+    if params[:copied] == card_text
+    end
+
+
     # Check text submitted from form on show page.
     # If matching, render success view. 
     # If not, render try again view.
