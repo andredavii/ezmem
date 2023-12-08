@@ -1,6 +1,6 @@
 <p>Blanked text...</p>
 
-<%= form_with url: "/learn_cards", method: :get do |form| %>
+<%= form_with url: learn_card_path(@card), method: :put do |form| %>
 
   <div>
     <%= form.label :copied, "Copy the answer and fill in the blanks:", :class => "form-label" %>

@@ -6,7 +6,10 @@ class LearnCardsController < ApplicationController
   end
 
   def update
-    if params[:copied] == card_text
+    if params[:copied] == @card.text
+      render "success"
+    else
+      render "try_again"
     end
 
 
@@ -16,8 +19,8 @@ class LearnCardsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_card
-      @card = Card.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_card
+    @card = Card.find(params[:id])
+  end
 end
