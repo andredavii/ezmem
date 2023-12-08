@@ -1,4 +1,4 @@
-<p>Blanked text...</p>
+<h2 class="card" style="max-width: 1296px"><%= @blanks_1 %></h2>
 
 <%= form_with url: learn_card_path(@card), method: :put do |form| %>
 
@@ -7,11 +7,10 @@
     <%= form.text_area :copied, :value => @copied, :class => "form-control" %>
   </div>
 
-<br>
+  <br>
   <div>
-    <%= form.submit "Submit", :class => "btn btn-success" %>
+    <%= form.submit "Submit", :class => "btn btn-primary" %>
   </div>
 <% end %>
 
 
-<p> Form pointing to update path/action </p>

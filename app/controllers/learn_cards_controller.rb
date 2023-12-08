@@ -2,6 +2,8 @@ class LearnCardsController < ApplicationController
   before_action :set_card
 
   def show
+    learn_card = LearnCard.new(@card)
+    @blanks_1 = learn_card.fill_ins_1
     # Generate and display blanked out text via LearnCard mocel
   end
 
