@@ -13,7 +13,7 @@ class LearnCard
     blanks = card_text.chars
 
     random_items.each do |i|
-      if blanks[i] != ' '
+      if blanks[i] =~ /[a-zA-Z0-9]/
         blanks[i] = '_'
       end
     end
