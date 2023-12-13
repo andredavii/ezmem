@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :card_sets
+
+  resources :card_sets do
+    get 'cards', :to => 'card_set_cards#index', :as => 'cards'
+  end
+
   resources :cards 
   resources :learn_cards, :only => [:show, :update]
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?

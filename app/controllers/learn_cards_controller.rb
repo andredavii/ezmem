@@ -8,7 +8,9 @@ class LearnCardsController < ApplicationController
   end
 
   def update
-    if params[:copied] == @card.text
+    @downcased = @card.text.downcase
+    @stripped = @downcased.strip
+    if params[:copied].strip == @stripped
       render "success"
     else
       render "try_again"

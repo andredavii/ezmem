@@ -1,6 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @card_set %>
+<%= link_to "Cards in this set", card_set_cards_path(@card_set) %> |
 
 <div>
   <%= link_to "Edit this card set", edit_card_set_path(@card_set) %> |

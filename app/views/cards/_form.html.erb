@@ -5,7 +5,9 @@
 
   <div class="form-inputs">
     <%= f.input :text %>
+    <%= f.association :card_set %>
   </div>
+
 
   <div class="form-actions">
     <%= f.button :submit, class: "btn btn-primary"  %>
