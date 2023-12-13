@@ -1,6 +1,9 @@
-<br>
-<h1 style="text-align: center;"><%= @card_set.name %></h1>
+<p style="color: green"><%= notice %></p>
 
+<h1 style="text-align: center;"><%= @card_set.name %></h1>
+<div style="text-align: center; margin-right: -465px;">
+  <%= link_to "Edit", edit_card_set_path(@card_set), class: "btn btn-primary" %>
+</div>
 <div id="cards" >
   <% @cards.each do |card| %>
     <div class="card">
