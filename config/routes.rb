@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :card_sets
   resources :cards 
   resources :learn_cards, :only => [:show, :update]
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
