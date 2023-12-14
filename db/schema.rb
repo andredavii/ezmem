@@ -25,19 +25,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_13_022603) do
     t.index ["card_set_id"], name: "index_cards_on_card_set_id"
   end
 
-  create_table "memorizes", force: :cascade do |t|
-    t.text "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "projects", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
