@@ -20,6 +20,7 @@ end
 
 5.times do
   Card.all.each do |card|
-    card.card_sets << CardSet.find(rand(1..8))
+    card.card_set = CardSet.find(rand(1..8))
+    card.save
   end
 end

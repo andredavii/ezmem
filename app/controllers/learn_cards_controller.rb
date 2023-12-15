@@ -10,10 +10,11 @@ class LearnCardsController < ApplicationController
   def update
     @downcased = @card.text.downcase
     @stripped = @downcased.strip
-    if params[:copied].strip == @stripped
-      render "success"
+    @copied = params[:copied].downcase
+    if @copied.strip == @stripped
+      render "success", :status => 302
     else
-      render "try_again"
+      render "try_again", :status => 422
     end
 
 
