@@ -1,22 +1,19 @@
-<h1> Level 1 </h1>
+<h1> Level 2 </h1>
+
 <h2 class="card learn-card-text"><%= @blanks %></h2>
 
 <%= form_with model: @card, url: learn_card_path(@card), method: :put do |form| %>
 
   <div>
-    <%= form.label :copied, 'Welcome to Learn! Begin by carefully copying the text and clicking "Submit" below:', class: "form-label" %>
+    <%= form.label :copied, "Great! For the next step, copy the text while filling in the missing letters:", class: "form-label" %>
     <%= form.text_area :copied, value: @copied, class: "form-control" %>
   </div>
 
   <br>
 
   <div>
-    <%= form.hidden_field :level, value: 1 %>
+    <%= form.hidden_field :level, value: 2 %>
     <%= form.submit "Submit", class: "btn btn-primary" %>
   </div>
 
 <% end %>
-
-
-
-

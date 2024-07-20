@@ -2,29 +2,45 @@ class LearnCardsController < ApplicationController
   before_action :set_card
 
   def show
-    learn_card = LearnCard.new(@card)
-    @blanks_1 = learn_card.fill_ins_1
-    # Generate and display blanked out text via LearnCard mocel
+    @learn_card = LearnCard.new(@card)
+    @current_level = params[:level].to_i || 1
+    
+    case @current_level
+    when 1
+      @blanks = @learn_card.fill_ins_1(0)
+      render "show"
+    when 2
+      @blanks = @learn_card.fill_ins_1(0.5)
+      render "show2"
+    when 3
+      @blanks = @learn_card.fill_ins_1(0.75)
+      render "show3"
+    when 4
+      @blanks = @learn_card.fill_ins_1(4)
+      render "show4"
+    when 5
+      render "success"
+    else
+      @blanks = @learn_card.fill_ins_1(0)
+    end
   end
 
   def update
     @downcased = @card.text.downcase
     @stripped = @downcased.strip
-    @copied = params[:copied].downcase
+    @copied = params[:card][:copied].downcase  
+  
     if @copied.strip == @stripped
-      render "success", :status => 302
+      @current_level = params[:card][:level].to_i + 1  
+      redirect_to learn_card_path(@card, level: @current_level)
     else
-      render "try_again", :status => 422
+      @current_level = params[:card][:level].to_i
+      render "try_again", status: 422
     end
-
-
-    # Check text submitted from form on show page.
-    # If matching, render success view. 
-    # If not, render try again view.
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
+
   def set_card
     @card = Card.find(params[:id])
   end

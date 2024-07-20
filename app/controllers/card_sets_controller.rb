@@ -3,7 +3,7 @@ class CardSetsController < ApplicationController
 
   # GET /card_sets or /card_sets.json
   def index
-    @card_sets = CardSet.all
+    @card_sets = CardSet.order(created_at: :desc)
   end
 
   # GET /card_sets/1 or /card_sets/1.json
@@ -25,7 +25,7 @@ class CardSetsController < ApplicationController
 
     respond_to do |format|
       if @card_set.save
-        format.html { redirect_to card_set_url(@card_set), notice: "Card set was successfully created." }
+        format.html { redirect_to card_sets_url, notice: "Card set was successfully created." }
         format.json { render :show, status: :created, location: @card_set }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class CardSetsController < ApplicationController
   def update
     respond_to do |format|
       if @card_set.update(card_set_params)
-        format.html { redirect_to card_set_url(@card_set), notice: "Card set was successfully updated." }
+        format.html { redirect_to card_set_cards_url(@card_set), notice: "Card set was successfully updated." }
         format.json { render :show, status: :ok, location: @card_set }
       else
         format.html { render :edit, status: :unprocessable_entity }

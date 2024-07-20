@@ -6,21 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 #
-20.times do |index|
-  Card.create(
-    :text => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  )
-end
+card_set = CardSet.create(
+  name: 'Welcome to EZmem! I am a card "Set". Click on me to explore the memory cards in this set!'
+)
 
-8.times do |index|
-  CardSet.create(
-    :name => "Set #{index}"
-  )
-end
-
-5.times do
-  Card.all.each do |card|
-    card.card_set = CardSet.find(rand(1..8))
-    card.save
-  end
-end
+card = card_set.cards.create(
+  text: 'I am a memory card! You can create different cards and add them to this set or other sets you create by clicking "New card" above. To learn or practice a card, click "Learn this card" below it. To edit or remove a card, click "Show this card". Happy memorizing!'
+)

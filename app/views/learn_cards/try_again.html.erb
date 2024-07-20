@@ -2,5 +2,5 @@
 <h1 style="text-align: center;"> Oops&#128556; Nice try!</h1>
 <br>
 <div class="text-center">
-  <%= link_to "Try again", learn_card_path(@card), class: "btn btn-success" %>
+  <%= link_to "Try again", learn_card_path(@card, level: @current_level), class: "btn btn-success" %>
 </div>
