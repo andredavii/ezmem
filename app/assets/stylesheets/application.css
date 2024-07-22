@@ -31,5 +31,6 @@
 
 .learn-card-text {
   max-width: 1296px;
-  font-family: sans-serif;
+  font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+  letter-spacing: 0.05rem;
 }

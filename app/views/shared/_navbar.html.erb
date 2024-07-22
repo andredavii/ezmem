@@ -6,20 +6,19 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <%= link_to "Sets", card_sets_path, :class => "nav-link" %>
         </li>
-        <li>
+        <li class="nav-item">
           <%= link_to "Cards", cards_path, :class => "nav-link" %>
         </li>
       </ul>
+      <% if current_user.present? %>     
+        <%= button_to("Log Out", destroy_user_session_path, :method => :delete, :class => "btn btn-outline-success") %>
+      <% else %>
+        <%= button_to("Log In", user_session_path, :class => "btn btn-outline-success") %>
+      <% end %>
     </div>
-
-    <% if current_user.present? %>     
-      <%= button_to("Log Out", destroy_user_session_path, :method => :delete, :class => "btn btn-outline-success") %>
-    <% else %>
-      <%= button_to("Log In", user_session_path, :class => "btn btn-outline-success") %>
-    <%end%>
   </div>
 </nav>

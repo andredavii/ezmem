@@ -14,7 +14,7 @@ class LearnCard
 
     random_items.each do |i|
       if blanks[i] =~ /[a-zA-Z0-9]/
-        blanks[i] = '.'
+        blanks[i] = '_'
       end
     end
 
