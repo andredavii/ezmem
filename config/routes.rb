@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/index'
 
   resources :card_sets do
     get 'cards', :to => 'card_set_cards#index', :as => 'cards'
@@ -12,5 +13,5 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "card_sets#index"
+  root "home#index"
 end
