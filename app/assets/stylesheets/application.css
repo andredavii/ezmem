@@ -34,3 +34,29 @@
   font-family: 'Lucida Sans Unicode', Arial, sans-serif;
   letter-spacing: 0.05rem;
 }
+
+/* Global */
+
+.line-1{
+    color: #0d6efd;
+    width: 10.75em;
+    border-right: 2px solid rgba(255,255,255,.75);
+    white-space: nowrap;
+    overflow: hidden;
+    padding-bottom: 0.04em; /* Adds a bit of extra space below */
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 2s steps(22) 1s 1 normal both,
+             blinkTextCursor 800ms steps(22) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 10.75;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: #0d6efd;}
+  to{border-right-color: transparent;}
+}
+
